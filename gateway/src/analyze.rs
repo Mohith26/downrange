@@ -67,15 +67,21 @@ pub fn analyze(rec: &Recording, channels: &[Channel]) -> Value {
         }
     }
     let mut signal = vec![];
+    let mut by_reason: std::collections::BTreeMap<String, u64> = Default::default();
     let mut limit_transitions = 0u64;
     let mut alarm_entries = 0u64;
     for e in &events {
         match &e.kind {
-            AlarmKind::Signal { aos, reason } => signal.push(json!({
+            AlarmKind::Signal { aos, reason } => {
+                if !aos {
+                    *by_reason.entry(reason.clone()).or_insert(0) += 1;
+                }
+                signal.push(json!({
                 "t_offset_s": ((e.t - base) / 1000.0).round(),
                 "aos": aos,
                 "reason": reason,
-            })),
+            }))
+            }
             AlarmKind::Limit { to, .. } => {
                 limit_transitions += 1;
                 if to.severity() == 2 {
@@ -102,6 +108,7 @@ pub fn analyze(rec: &Recording, channels: &[Channel]) -> Value {
         "feed_connects": connects,
         "feed_disconnects": disconnects,
         "los_events": eng.los_events,
+        "los_events_by_cause": by_reason,
         "seconds_in_los": (los_ms / 1000.0).round(),
         "signal_transitions": signal,
         "limit_transitions": limit_transitions,
