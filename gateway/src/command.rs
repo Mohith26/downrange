@@ -6,18 +6,18 @@
 
 use crate::limits::{Level, LimitEngine};
 use rand::RngCore;
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 use std::collections::{HashMap, VecDeque};
 use std::io::Write;
 
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ArgDef {
     pub name: String,
     pub min: f64,
     pub max: f64,
 }
 
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(tag = "type", rename_all = "snake_case")]
 pub enum Interlock {
     /// Channel must have a recent, source-good value with signal present.
@@ -28,7 +28,7 @@ pub enum Interlock {
     Range { ch: String, min: f64, max: f64 },
 }
 
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct CommandDef {
     pub name: String,
     pub desc: String,
@@ -115,7 +115,7 @@ struct Armed {
 
 enum KeyState {
     Armed { token: String, cmd: String, args: HashMap<String, f64> },
-    Executed { result: String, at_ms: f64 },
+    Executed { result: String, cmd: String, at_ms: f64 },
 }
 
 pub struct CommandEngine {
@@ -275,9 +275,10 @@ impl CommandEngine {
         now_ms: f64,
     ) -> (Reply, Vec<AuditEntry>) {
         let mut audit = vec![];
-        let cmd_name = match self.tokens.get(token) {
-            Some(a) => a.cmd.clone(),
-            None => String::new(),
+        let cmd_name = match (self.tokens.get(token), self.keys.get(key)) {
+            (Some(a), _) => a.cmd.clone(),
+            (None, Some(KeyState::Executed { cmd, .. })) => cmd.clone(),
+            _ => String::new(),
         };
         let entry = |event: &str, detail: String| AuditEntry {
             t: now_ms,
@@ -315,47 +316,16 @@ impl CommandEngine {
         }
         let armed = self.tokens.remove(token).unwrap();
         let result = self.device.execute(key, &armed.cmd, &armed.args);
-        self.keys.insert(key.into(), KeyState::Executed { result: result.clone(), at_ms: now_ms });
+        self.keys.insert(key.into(), KeyState::Executed { result: result.clone(), cmd: armed.cmd.clone(), at_ms: now_ms });
         audit.push(self.log(entry("executed", result.clone())));
         (Reply::Executed { key: key.into(), result, dedup: false }, audit)
     }
 }
 
-/// Commands for the ISS console. All of them target the loopback device; the
-/// interlocks read real ISS channels.
+/// Commands for the ISS console, shared with the browser console. All of them target
+/// the loopback device; their interlocks read real ISS channels.
 pub fn iss_commands() -> Vec<CommandDef> {
-    let fresh = |c: &str| Interlock::Fresh { ch: c.into() };
-    let inl = |c: &str| Interlock::InLimits { ch: c.into() };
-    vec![
-        CommandDef {
-            name: "SIM_CMG_DESAT_REQUEST".into(),
-            desc: "Request a CMG momentum desaturation (simulated target)".into(),
-            args: vec![],
-            interlocks: vec![
-                inl("USLAB000010"),
-                Interlock::Range { ch: "USLAB000005".into(), min: 4.0, max: 4.0 },
-                Interlock::Range { ch: "USLAB000081".into(), min: 0.0, max: 0.0 },
-            ],
-        },
-        CommandDef {
-            name: "SIM_CABIN_FAN_SET".into(),
-            desc: "Set cabin fan speed percent (simulated target)".into(),
-            args: vec![ArgDef { name: "speed_pct".into(), min: 0.0, max: 100.0 }],
-            interlocks: vec![inl("USLAB000058"), inl("USLAB000059"), inl("USLAB000055")],
-        },
-        CommandDef {
-            name: "SIM_TCS_LOOP_A_PUMP_SET".into(),
-            desc: "Set external cooling loop A pump speed percent (simulated target)".into(),
-            args: vec![ArgDef { name: "speed_pct".into(), min: 50.0, max: 100.0 }],
-            interlocks: vec![inl("S1000002"), inl("S1000003"), fresh("S1000001")],
-        },
-        CommandDef {
-            name: "SIM_SARJ_PORT_HOLD".into(),
-            desc: "Hold the port solar alpha rotary joint at its current angle (simulated target)".into(),
-            args: vec![],
-            interlocks: vec![fresh("S0000004"), fresh("S0000005")],
-        },
-    ]
+    serde_json::from_str(include_str!("../../channels/iss_commands.json")).expect("iss_commands.json")
 }
 
 /// Commands used with the synthetic source (benchmarks and tests).
@@ -442,6 +412,13 @@ mod tests {
         let (r, _) = c.arm(1, "bad", "SIM_VALVE_OPEN", args(400.0), &lim, 300.0);
         assert!(matches!(r, Reply::Rejected { .. }));
         assert_eq!(c.device.total_executions, 0);
+    }
+
+    #[test]
+    fn iss_command_file_parses() {
+        let defs = iss_commands();
+        assert_eq!(defs.len(), 4);
+        assert!(defs.iter().all(|d| !d.interlocks.is_empty()));
     }
 
     #[test]

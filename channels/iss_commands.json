@@ -1,0 +1,41 @@
+[
+  {
+    "name": "SIM_CMG_DESAT_REQUEST",
+    "desc": "Request a CMG momentum desaturation",
+    "args": [],
+    "interlocks": [
+      { "type": "in_limits", "ch": "USLAB000010" },
+      { "type": "range", "ch": "USLAB000005", "min": 4, "max": 4 },
+      { "type": "range", "ch": "USLAB000081", "min": 0, "max": 0 }
+    ]
+  },
+  {
+    "name": "SIM_CABIN_FAN_SET",
+    "desc": "Set cabin fan speed",
+    "args": [{ "name": "speed_pct", "min": 0, "max": 100 }],
+    "interlocks": [
+      { "type": "in_limits", "ch": "USLAB000058" },
+      { "type": "in_limits", "ch": "USLAB000059" },
+      { "type": "in_limits", "ch": "USLAB000055" }
+    ]
+  },
+  {
+    "name": "SIM_TCS_LOOP_A_PUMP_SET",
+    "desc": "Set external cooling loop A pump speed",
+    "args": [{ "name": "speed_pct", "min": 50, "max": 100 }],
+    "interlocks": [
+      { "type": "in_limits", "ch": "S1000002" },
+      { "type": "in_limits", "ch": "S1000003" },
+      { "type": "fresh", "ch": "S1000001" }
+    ]
+  },
+  {
+    "name": "SIM_SARJ_PORT_HOLD",
+    "desc": "Hold the port solar alpha rotary joint at its current angle",
+    "args": [],
+    "interlocks": [
+      { "type": "fresh", "ch": "S0000004" },
+      { "type": "in_limits", "ch": "USLAB000010" }
+    ]
+  }
+]
