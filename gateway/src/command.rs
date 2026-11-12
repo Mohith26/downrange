@@ -384,6 +384,7 @@ mod tests {
     fn engine() -> LimitEngine {
         let ch = |id: &str, limits: Option<Limits>| Channel {
             id: id.into(),
+            label: id.into(),
             desc: String::new(),
             group: String::new(),
             unit: String::new(),

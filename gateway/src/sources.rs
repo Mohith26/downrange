@@ -115,6 +115,7 @@ pub fn synth_channels(n: usize, hz: f64) -> Vec<Channel> {
     (0..n)
         .map(|i| Channel {
             id: format!("SYN{i:04}"),
+            label: format!("Synthetic {i}"),
             desc: format!("Synthetic load channel {i} (benchmark only)"),
             group: "Synthetic".into(),
             unit: "arb".into(),

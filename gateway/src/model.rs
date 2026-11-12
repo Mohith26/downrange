@@ -29,6 +29,8 @@ pub struct Limits {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Channel {
     pub id: String,
+    #[serde(default)]
+    pub label: String,
     pub desc: String,
     pub group: String,
     pub unit: String,

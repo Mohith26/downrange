@@ -270,8 +270,8 @@ mod tests {
 
     fn chans() -> Vec<Channel> {
         vec![
-            Channel { id: "HB".into(), desc: String::new(), group: String::new(), unit: String::new(), limits: None, stale_ms: None },
-            Channel { id: "P".into(), desc: String::new(), group: String::new(), unit: String::new(), limits: Some(lim()), stale_ms: Some(500) },
+            Channel { id: "HB".into(), label: String::new(), desc: String::new(), group: String::new(), unit: String::new(), limits: None, stale_ms: None },
+            Channel { id: "P".into(), label: String::new(), desc: String::new(), group: String::new(), unit: String::new(), limits: Some(lim()), stale_ms: Some(500) },
         ]
     }
 

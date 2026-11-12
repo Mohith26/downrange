@@ -300,6 +300,9 @@ async fn reply_for(ws: &mut Ws, key: &str) -> Value {
     loop {
         let m = tokio::time::timeout(Duration::from_secs(5), ws.next()).await.expect("reply timeout");
         let Some(Ok(Message::Text(t))) = m else { panic!("socket closed") };
+        if std::env::var("DR_DEBUG").is_ok() && !t.starts_with("{\"type\":\"tm\"") {
+            eprintln!("rx {}", &t[..t.len().min(300)]);
+        }
         if !t.starts_with("{\"type\":\"cmd_reply\"") {
             continue;
         }
@@ -336,6 +339,9 @@ pub async fn command_faults(n: usize, seed: u64) -> Value {
     }
     let mut rng = Rng(seed | 1);
     let mut ws = connect(run.port, None).await;
+    if std::env::var("DR_DEBUG").is_ok() {
+        eprintln!("connected");
+    }
     let (mut lost_arm, mut lost_confirm, mut dup_confirm, mut reconnects) = (0u64, 0u64, 0u64, 0u64);
     let (mut interlock_rejections, mut dedup_replies, mut executed_replies) = (0u64, 0u64, 0u64);
     let wait_state = |want: u64| {
@@ -348,6 +354,9 @@ pub async fn command_faults(n: usize, seed: u64) -> Value {
         }
     };
     for i in 0..n {
+        if std::env::var("DR_DEBUG").is_ok() {
+            eprintln!("command {i}");
+        }
         let key = format!("cmd-{seed}-{i}");
         let (cmd, args) = if i % 2 == 0 {
             ("SIM_VALVE_OPEN", json!({"pct": (i % 100) as f64}))
@@ -382,24 +391,22 @@ pub async fn command_faults(n: usize, seed: u64) -> Value {
             ws = connect(run.port, Some(run.gw.hub.last_seq())).await;
         }
         let confirm = json!({"type": "confirm", "key": key, "token": token});
+        let mut expected_replies = 1;
         send(&mut ws, confirm.clone()).await;
         if rng.chance(0.2) {
             dup_confirm += 1;
+            expected_replies += 1;
             send(&mut ws, confirm.clone()).await;
         }
         let mut replies = vec![reply_for(&mut ws, &key).await];
         if rng.chance(0.2) {
+            // The confirm reply was "lost": retry with the same key and token.
             lost_confirm += 1;
+            expected_replies += 1;
             send(&mut ws, confirm.clone()).await;
         }
-        // Collect any extra replies produced by duplicates/retries.
-        while let Ok(Some(Ok(Message::Text(t)))) = tokio::time::timeout(Duration::from_millis(30), ws.next()).await {
-            if t.starts_with("{\"type\":\"cmd_reply\"") {
-                let v: Value = serde_json::from_str(&t).unwrap();
-                if v["reply"]["key"] == key.as_str() {
-                    replies.push(v["reply"].clone());
-                }
-            }
+        while replies.len() < expected_replies {
+            replies.push(reply_for(&mut ws, &key).await);
         }
         for r in &replies {
             assert_eq!(r["type"], "executed", "{r}");

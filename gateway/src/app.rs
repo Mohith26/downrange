@@ -16,6 +16,16 @@ use tokio::net::{TcpListener, TcpStream};
 use tokio::sync::mpsc;
 use tokio_tungstenite::tungstenite::Message;
 
+/// JSON object with `"type"` as the first key, so clients can route on a prefix check.
+pub fn typed(kind: &str, body: serde_json::Value) -> String {
+    let b = body.to_string();
+    if b.len() > 2 {
+        format!("{{\"type\":\"{kind}\",{}", &b[1..])
+    } else {
+        format!("{{\"type\":\"{kind}\"}}")
+    }
+}
+
 pub struct Core {
     pub limits: LimitEngine,
     pub cmds: CommandEngine,
@@ -57,14 +67,12 @@ impl Gateway {
         hub_cfg: HubConfig,
         audit_path: Option<&str>,
     ) -> Arc<Self> {
-        let meta = serde_json::json!({
-            "type": "meta",
+        let meta = typed("meta", serde_json::json!({
             "source": source,
             "device": "loopback (simulated actuator, no real hardware)",
             "channels": channels,
             "commands": commands,
-        })
-        .to_string();
+        }));
         let hub = Arc::new(Hub::new(channels.len(), hub_cfg));
         let limits = LimitEngine::new(channels, heartbeat, 10_000.0);
         let cmds = CommandEngine::new(commands, 10_000.0, audit_path);
@@ -118,7 +126,7 @@ impl Gateway {
                 match input {
                     Input::Samples(b) => gw.ingest(&b),
                     Input::Link { up, reason } => {
-                        let msg = serde_json::json!({"type": "link", "up": up, "reason": reason}).to_string();
+                        let msg = typed("link", serde_json::json!({"up": up, "reason": reason}));
                         gw.hub.broadcast(&msg);
                     }
                 }
@@ -153,8 +161,8 @@ impl Gateway {
                         .into_iter()
                         .map(|(name, ok, st)| serde_json::json!({"name": name, "ok": ok, "checks": st}))
                         .collect();
-                    let msg = serde_json::json!({"type": "interlocks", "aos": aos, "t": now, "cmds": cmds});
-                    gw.hub.broadcast(&msg.to_string());
+                    let msg = typed("interlocks", serde_json::json!({"aos": aos, "t": now, "cmds": cmds}));
+                    gw.hub.broadcast(&msg);
                 }
             }
         });
@@ -252,9 +260,9 @@ async fn ws_session(gw: Arc<Gateway>, stream: TcpStream) {
             }
         };
         let r = serde_json::to_value(&reply).unwrap();
-        client.push_control(serde_json::json!({"type": "cmd_reply", "reply": r}).to_string().into());
+        client.push_control(typed("cmd_reply", serde_json::json!({"reply": r})).into());
         for e in audit {
-            gw.hub.broadcast(&serde_json::json!({"type": "audit", "e": e}).to_string());
+            gw.hub.broadcast(&typed("audit", serde_json::json!({"e": e})));
         }
     };
     for m in pending {
