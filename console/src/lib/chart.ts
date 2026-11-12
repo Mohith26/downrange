@@ -49,6 +49,8 @@ export function drawChart(ctx: CanvasRenderingContext2D, w: number, h: number, s
   const compact = laneH < 34
   ctx.font = `${compact ? 10 : 12}px Inter, system-ui, -apple-system, sans-serif`
   ctx.textBaseline = 'middle'
+  // time grid: a line every tenth of the window, labelled with seconds before now
+  const step = opt.windowMs / 6
 
   for (let li = 0; li < n; li++) {
     const ch = opt.lanes[li]
@@ -90,6 +92,27 @@ export function drawChart(ctx: CanvasRenderingContext2D, w: number, h: number, s
     lo -= padY
     hi += padY
     const py = (v: number) => y0 + laneH - 2 - ((v - lo) / (hi - lo)) * (laneH - 4)
+
+    ctx.strokeStyle = COLORS.grid
+    ctx.lineWidth = 1
+    ctx.beginPath()
+    for (let k = 1; k < 6; k++) {
+      const X = Math.round(plotX + plotW - (k * step * plotW) / opt.windowMs) + 0.5
+      ctx.moveTo(X, y0)
+      ctx.lineTo(X, y0 + laneH)
+    }
+    ctx.stroke()
+    if (li === n - 1 && !compact) {
+      ctx.fillStyle = COLORS.muted
+      ctx.font = '10px Inter, system-ui, -apple-system, sans-serif'
+      ctx.textAlign = 'center'
+      for (let k = 1; k < 6; k++) {
+        const X = plotX + plotW - (k * step * plotW) / opt.windowMs
+        ctx.fillText(`-${Math.round((k * step) / 1000)}s`, X, y0 + laneH - 7)
+      }
+      ctx.textAlign = 'left'
+      ctx.font = '12px Inter, system-ui, -apple-system, sans-serif'
+    }
 
     // limit lines that fall inside the visible range
     if (lim && !compact) {

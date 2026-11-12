@@ -77,7 +77,9 @@ export class TelemetryStore {
         this.link = e.aos ? 'aos' : 'los'
         this.linkReason = e.reason
       }
-      this.alarms.unshift({ ...e, id: this.nextAlarmId++, acked: e.kind === 'stale' && !e.stale })
+      // Recoveries (signal back, channel fresh again) are informational and need no ack.
+      const recovery = (e.kind === 'stale' && !e.stale) || (e.kind === 'signal' && e.aos)
+      this.alarms.unshift({ ...e, id: this.nextAlarmId++, acked: recovery })
     }
     if (this.alarms.length > 300) this.alarms.length = 300
   }
