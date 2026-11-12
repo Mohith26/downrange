@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "cp ../recordings/iss-session.rec public/iss-session.rec && tsc -b && vite build",
+    "build": "cp ../recordings/iss-pass.rec public/iss-pass.rec && tsc -b && vite build",
     "test": "vitest run",
     "typecheck": "tsc -b"
   },

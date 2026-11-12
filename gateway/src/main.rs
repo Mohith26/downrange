@@ -24,7 +24,7 @@ fn load_channels(path: &str) -> Vec<Channel> {
 
 async fn record(args: &[String]) {
     let chans = load_channels(&arg(args, "--channels").unwrap_or("../channels/iss_channels.json".into()));
-    let out = arg(args, "--out").unwrap_or("../recordings/iss-session.rec".into());
+    let out = arg(args, "--out").unwrap_or("../recordings/session.rec".into());
     let minutes: f64 = num(args, "--minutes", 60.0);
     let ids: Vec<String> = chans.iter().map(|c| c.id.clone()).collect();
     let start = now_ms();
@@ -66,7 +66,7 @@ async fn serve_cmd(args: &[String]) {
     let source = arg(args, "--source").unwrap_or("replay".into());
     let port: u16 = num(args, "--port", 8787);
     let chan_path = arg(args, "--channels").unwrap_or("../channels/iss_channels.json".into());
-    let rec_path = arg(args, "--rec").unwrap_or("../recordings/iss-session.rec".into());
+    let rec_path = arg(args, "--rec").unwrap_or("../recordings/iss-pass.rec".into());
     let speed: f64 = num(args, "--speed", 1.0);
     let audit = arg(args, "--audit").unwrap_or("audit.jsonl".into());
     let (tx, rx) = tokio::sync::mpsc::channel::<Input>(256);
@@ -137,7 +137,7 @@ async fn bench_cmd(args: &[String]) {
         }
         "commands" => bench::command_faults(num(args, "--n", 1000), num(args, "--seed", 7)).await,
         "analyze" => {
-            let rec = record::load(&arg(args, "--rec").unwrap_or("../recordings/iss-session.rec".into())).expect("rec");
+            let rec = record::load(&arg(args, "--rec").unwrap_or("../recordings/iss-pass.rec".into())).expect("rec");
             let chans = load_channels(&arg(args, "--channels").unwrap_or("../channels/iss_channels.json".into()));
             analyze::analyze(&rec, &chans)
         }

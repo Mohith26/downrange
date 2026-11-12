@@ -1,0 +1,16 @@
+{
+  "device_pixel_ratio": 2,
+  "fps_avg": 120.04441643393746,
+  "frame_ms_max": 11.800000011920927,
+  "frame_ms_p50": 8.300000011920929,
+  "frame_ms_p95": 9.299999982118608,
+  "frame_ms_p99": 9.400000005960464,
+  "frames": 1200,
+  "frames_over_33ms": 0,
+  "lanes": 64,
+  "samples_per_s_received": 6398.052623168213,
+  "samples_received": 64001,
+  "seconds": 10,
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+  "viewport": "1440x900"
+}

@@ -1,0 +1,730 @@
+{
+  "generated_utc": "2026-11-12T04:45:57Z",
+  "machine": {
+    "os": "Darwin 27.2.0",
+    "macos": "27.2",
+    "arch": "arm64",
+    "logical_cpus": 18,
+    "rustc": "rustc 1.98.0-nightly (c397dae80 2026-07-02)",
+    "note": "gateway and all benchmark clients run on the same machine over loopback"
+  },
+  "iss_session": {
+    "alarm_level_entries": 0,
+    "busiest_channels": [
+      {
+        "id": "TIME_000001",
+        "updates": 79573
+      },
+      {
+        "id": "S0000003",
+        "updates": 2973
+      },
+      {
+        "id": "S0000004",
+        "updates": 2973
+      },
+      {
+        "id": "USLAB000025",
+        "updates": 2972
+      },
+      {
+        "id": "USLAB000026",
+        "updates": 2972
+      }
+    ],
+    "channels_subscribed": 90,
+    "channels_with_source_status_not_nominal": 90,
+    "channels_with_updates": 90,
+    "feed_connects": 5,
+    "feed_disconnects": 4,
+    "limit_transitions": 0,
+    "los_events": 23,
+    "los_events_by_cause": {
+      "heartbeat timeout": 21,
+      "source reports loss of signal": 2
+    },
+    "minutes_recorded": 77.9,
+    "non_numeric_values": 0,
+    "rows_with_source_status_not_nominal": 200,
+    "seconds_in_los": 1287.0,
+    "signal_transitions": [
+      {
+        "aos": true,
+        "reason": "heartbeat status nominal",
+        "t_offset_s": 1.0
+      },
+      {
+        "aos": false,
+        "reason": "heartbeat timeout",
+        "t_offset_s": 60.0
+      },
+      {
+        "aos": true,
+        "reason": "heartbeat status nominal",
+        "t_offset_s": 99.0
+      },
+      {
+        "aos": false,
+        "reason": "heartbeat timeout",
+        "t_offset_s": 167.0
+      },
+      {
+        "aos": true,
+        "reason": "heartbeat status nominal",
+        "t_offset_s": 169.0
+      },
+      {
+        "aos": false,
+        "reason": "heartbeat timeout",
+        "t_offset_s": 198.0
+      },
+      {
+        "aos": true,
+        "reason": "heartbeat status nominal",
+        "t_offset_s": 208.0
+      },
+      {
+        "aos": false,
+        "reason": "heartbeat timeout",
+        "t_offset_s": 218.0
+      },
+      {
+        "aos": true,
+        "reason": "heartbeat status nominal",
+        "t_offset_s": 228.0
+      },
+      {
+        "aos": false,
+        "reason": "heartbeat timeout",
+        "t_offset_s": 240.0
+      },
+      {
+        "aos": true,
+        "reason": "heartbeat status nominal",
+        "t_offset_s": 285.0
+      },
+      {
+        "aos": false,
+        "reason": "heartbeat timeout",
+        "t_offset_s": 318.0
+      },
+      {
+        "aos": true,
+        "reason": "heartbeat status nominal",
+        "t_offset_s": 392.0
+      },
+      {
+        "aos": false,
+        "reason": "heartbeat timeout",
+        "t_offset_s": 478.0
+      },
+      {
+        "aos": true,
+        "reason": "heartbeat status nominal",
+        "t_offset_s": 480.0
+      },
+      {
+        "aos": false,
+        "reason": "heartbeat timeout",
+        "t_offset_s": 496.0
+      },
+      {
+        "aos": true,
+        "reason": "heartbeat status nominal",
+        "t_offset_s": 497.0
+      },
+      {
+        "aos": false,
+        "reason": "heartbeat timeout",
+        "t_offset_s": 525.0
+      },
+      {
+        "aos": true,
+        "reason": "heartbeat status nominal",
+        "t_offset_s": 538.0
+      },
+      {
+        "aos": false,
+        "reason": "heartbeat timeout",
+        "t_offset_s": 583.0
+      },
+      {
+        "aos": true,
+        "reason": "heartbeat status nominal",
+        "t_offset_s": 589.0
+      },
+      {
+        "aos": false,
+        "reason": "heartbeat timeout",
+        "t_offset_s": 651.0
+      },
+      {
+        "aos": true,
+        "reason": "heartbeat status nominal",
+        "t_offset_s": 653.0
+      },
+      {
+        "aos": false,
+        "reason": "heartbeat timeout",
+        "t_offset_s": 732.0
+      },
+      {
+        "aos": true,
+        "reason": "heartbeat status nominal",
+        "t_offset_s": 738.0
+      },
+      {
+        "aos": false,
+        "reason": "source reports loss of signal",
+        "t_offset_s": 922.0
+      },
+      {
+        "aos": true,
+        "reason": "heartbeat status nominal",
+        "t_offset_s": 1331.0
+      },
+      {
+        "aos": false,
+        "reason": "heartbeat timeout",
+        "t_offset_s": 3119.0
+      },
+      {
+        "aos": true,
+        "reason": "heartbeat status nominal",
+        "t_offset_s": 3128.0
+      },
+      {
+        "aos": false,
+        "reason": "heartbeat timeout",
+        "t_offset_s": 3144.0
+      },
+      {
+        "aos": true,
+        "reason": "heartbeat status nominal",
+        "t_offset_s": 3146.0
+      },
+      {
+        "aos": false,
+        "reason": "heartbeat timeout",
+        "t_offset_s": 3165.0
+      },
+      {
+        "aos": true,
+        "reason": "heartbeat status nominal",
+        "t_offset_s": 3165.0
+      },
+      {
+        "aos": false,
+        "reason": "heartbeat timeout",
+        "t_offset_s": 3195.0
+      },
+      {
+        "aos": true,
+        "reason": "heartbeat status nominal",
+        "t_offset_s": 3196.0
+      },
+      {
+        "aos": false,
+        "reason": "heartbeat timeout",
+        "t_offset_s": 3218.0
+      },
+      {
+        "aos": true,
+        "reason": "heartbeat status nominal",
+        "t_offset_s": 3239.0
+      },
+      {
+        "aos": false,
+        "reason": "heartbeat timeout",
+        "t_offset_s": 3254.0
+      },
+      {
+        "aos": true,
+        "reason": "heartbeat status nominal",
+        "t_offset_s": 3258.0
+      },
+      {
+        "aos": false,
+        "reason": "heartbeat timeout",
+        "t_offset_s": 3269.0
+      },
+      {
+        "aos": true,
+        "reason": "heartbeat status nominal",
+        "t_offset_s": 3274.0
+      },
+      {
+        "aos": false,
+        "reason": "heartbeat timeout",
+        "t_offset_s": 3286.0
+      },
+      {
+        "aos": true,
+        "reason": "heartbeat status nominal",
+        "t_offset_s": 3335.0
+      },
+      {
+        "aos": false,
+        "reason": "heartbeat timeout",
+        "t_offset_s": 3350.0
+      },
+      {
+        "aos": true,
+        "reason": "heartbeat status nominal",
+        "t_offset_s": 3708.0
+      },
+      {
+        "aos": false,
+        "reason": "source reports loss of signal",
+        "t_offset_s": 3848.0
+      },
+      {
+        "aos": true,
+        "reason": "heartbeat status nominal",
+        "t_offset_s": 3860.0
+      }
+    ],
+    "start_unix_ms": 1794453792346,
+    "updates_per_second_avg": 33.65,
+    "updates_received": 157288
+  },
+  "fanout_throughput": {
+    "load": "synthetic generator (benchmark only, not ISS data)",
+    "clients": 4,
+    "max_sustained": {
+      "channels": 4000,
+      "hz_per_channel": 500.0,
+      "samples_per_s": 2000000.0,
+      "clients": 4,
+      "ingest_stalls": 0,
+      "latency_ms_p50": 1.391,
+      "latency_ms_p99": 59.209
+    },
+    "pass_rule": "0 ingest stalls, 0 coalesced frames, 0 sequence gaps, every client receives >= 98% of offered rate",
+    "points": [
+      {
+        "channels": 1000,
+        "clients": 4,
+        "coalesced_frames": 0,
+        "hz_per_channel": 100.0,
+        "ingest_stalls": 0,
+        "latency_ms_max": 3.084,
+        "latency_ms_p50": 0.127,
+        "latency_ms_p99": 0.252,
+        "latency_samples": 400120,
+        "max_ingest_batch_ms": 0.611833,
+        "max_sched_lag_ms": 3.241,
+        "measure_s": 8.0,
+        "min_client_samples_per_s": 100030.0,
+        "offered_samples_per_s": 100000.0,
+        "pass": true,
+        "published_samples_in_window": 800003,
+        "seq_gaps": 0
+      },
+      {
+        "channels": 2000,
+        "clients": 4,
+        "coalesced_frames": 0,
+        "hz_per_channel": 250.0,
+        "ingest_stalls": 0,
+        "latency_ms_max": 2.151,
+        "latency_ms_p50": 0.383,
+        "latency_ms_p99": 0.673,
+        "latency_samples": 2000640,
+        "max_ingest_batch_ms": 1.138833,
+        "max_sched_lag_ms": 1.86,
+        "measure_s": 8.0,
+        "min_client_samples_per_s": 500161.0,
+        "offered_samples_per_s": 500000.0,
+        "pass": true,
+        "published_samples_in_window": 4000043,
+        "seq_gaps": 0
+      },
+      {
+        "channels": 4000,
+        "clients": 4,
+        "coalesced_frames": 0,
+        "hz_per_channel": 500.0,
+        "ingest_stalls": 0,
+        "latency_ms_max": 107.159,
+        "latency_ms_p50": 1.391,
+        "latency_ms_p99": 59.209,
+        "latency_samples": 8001372,
+        "max_ingest_batch_ms": 58.497625,
+        "max_sched_lag_ms": 4.604,
+        "measure_s": 8.0,
+        "min_client_samples_per_s": 2000343.0,
+        "offered_samples_per_s": 2000000.0,
+        "pass": true,
+        "published_samples_in_window": 15998726,
+        "seq_gaps": 0
+      },
+      {
+        "channels": 8000,
+        "clients": 4,
+        "coalesced_frames": 64,
+        "hz_per_channel": 500.0,
+        "ingest_stalls": 63,
+        "latency_ms_max": 4526.207,
+        "latency_ms_p50": 1501.078,
+        "latency_ms_p99": 4391.644,
+        "latency_samples": 1482463,
+        "max_ingest_batch_ms": 2627.634666,
+        "max_sched_lag_ms": 1156.703,
+        "measure_s": 8.0,
+        "min_client_samples_per_s": 370104.0,
+        "offered_samples_per_s": 4000000.0,
+        "pass": false,
+        "published_samples_in_window": 12200676,
+        "seq_gaps": 0
+      }
+    ]
+  },
+  "slow_client": {
+    "baseline_no_stalled_client": {
+      "channels": 1000,
+      "client_queue_cap_samples": 20000,
+      "fast_clients": 3,
+      "fast_coalesced_frames": 0,
+      "fast_delivery_ratio": 1.0,
+      "fast_latency_ms_p50": 0.127,
+      "fast_latency_ms_p99": 0.219,
+      "fast_min_samples_per_s": 100002.0,
+      "fast_seq_gaps": 0,
+      "hz_per_channel": 100.0,
+      "ingest_stalls": 0,
+      "measure_s": 20.0,
+      "rss_mb_at_start": 5.3,
+      "rss_mb_max_during": 28.0,
+      "rss_mb_min_during": 14.9,
+      "stalled_client_coalesce_events": null,
+      "stalled_client_dropped_samples": null,
+      "stalled_client_max_queued_samples": null,
+      "stalled_clients": 0,
+      "timeline": [
+        {
+          "rss_mb": 14.9,
+          "stalled_dropped_samples": 0,
+          "stalled_queued_samples": 0,
+          "t_s": 1.0
+        },
+        {
+          "rss_mb": 21.6,
+          "stalled_dropped_samples": 0,
+          "stalled_queued_samples": 0,
+          "t_s": 2.0
+        },
+        {
+          "rss_mb": 22.3,
+          "stalled_dropped_samples": 0,
+          "stalled_queued_samples": 0,
+          "t_s": 3.0
+        },
+        {
+          "rss_mb": 22.9,
+          "stalled_dropped_samples": 0,
+          "stalled_queued_samples": 0,
+          "t_s": 4.0
+        },
+        {
+          "rss_mb": 23.0,
+          "stalled_dropped_samples": 0,
+          "stalled_queued_samples": 0,
+          "t_s": 5.0
+        },
+        {
+          "rss_mb": 22.2,
+          "stalled_dropped_samples": 0,
+          "stalled_queued_samples": 0,
+          "t_s": 6.0
+        },
+        {
+          "rss_mb": 23.1,
+          "stalled_dropped_samples": 0,
+          "stalled_queued_samples": 0,
+          "t_s": 7.0
+        },
+        {
+          "rss_mb": 23.6,
+          "stalled_dropped_samples": 0,
+          "stalled_queued_samples": 0,
+          "t_s": 8.0
+        },
+        {
+          "rss_mb": 24.2,
+          "stalled_dropped_samples": 0,
+          "stalled_queued_samples": 0,
+          "t_s": 9.0
+        },
+        {
+          "rss_mb": 24.3,
+          "stalled_dropped_samples": 0,
+          "stalled_queued_samples": 0,
+          "t_s": 10.0
+        },
+        {
+          "rss_mb": 25.3,
+          "stalled_dropped_samples": 0,
+          "stalled_queued_samples": 0,
+          "t_s": 11.0
+        },
+        {
+          "rss_mb": 26.6,
+          "stalled_dropped_samples": 0,
+          "stalled_queued_samples": 0,
+          "t_s": 12.0
+        },
+        {
+          "rss_mb": 26.8,
+          "stalled_dropped_samples": 0,
+          "stalled_queued_samples": 0,
+          "t_s": 13.0
+        },
+        {
+          "rss_mb": 26.9,
+          "stalled_dropped_samples": 0,
+          "stalled_queued_samples": 0,
+          "t_s": 14.0
+        },
+        {
+          "rss_mb": 27.1,
+          "stalled_dropped_samples": 0,
+          "stalled_queued_samples": 0,
+          "t_s": 15.0
+        },
+        {
+          "rss_mb": 27.3,
+          "stalled_dropped_samples": 0,
+          "stalled_queued_samples": 0,
+          "t_s": 16.0
+        },
+        {
+          "rss_mb": 27.4,
+          "stalled_dropped_samples": 0,
+          "stalled_queued_samples": 0,
+          "t_s": 17.0
+        },
+        {
+          "rss_mb": 27.6,
+          "stalled_dropped_samples": 0,
+          "stalled_queued_samples": 0,
+          "t_s": 18.0
+        },
+        {
+          "rss_mb": 27.8,
+          "stalled_dropped_samples": 0,
+          "stalled_queued_samples": 0,
+          "t_s": 19.0
+        },
+        {
+          "rss_mb": 28.0,
+          "stalled_dropped_samples": 0,
+          "stalled_queued_samples": 0,
+          "t_s": 20.0
+        }
+      ]
+    },
+    "with_stalled_client": {
+      "channels": 1000,
+      "client_queue_cap_samples": 20000,
+      "fast_clients": 3,
+      "fast_coalesced_frames": 0,
+      "fast_delivery_ratio": 1.0,
+      "fast_latency_ms_p50": 0.129,
+      "fast_latency_ms_p99": 0.211,
+      "fast_min_samples_per_s": 100002.0,
+      "fast_seq_gaps": 0,
+      "hz_per_channel": 100.0,
+      "ingest_stalls": 0,
+      "measure_s": 20.0,
+      "rss_mb_at_start": 33.6,
+      "rss_mb_max_during": 44.7,
+      "rss_mb_min_during": 38.9,
+      "stalled_client_coalesce_events": 1,
+      "stalled_client_dropped_samples": 2066477,
+      "stalled_client_max_queued_samples": 19779,
+      "stalled_clients": 1,
+      "timeline": [
+        {
+          "rss_mb": 38.9,
+          "stalled_dropped_samples": 66437,
+          "stalled_queued_samples": 19779,
+          "t_s": 1.0
+        },
+        {
+          "rss_mb": 42.4,
+          "stalled_dropped_samples": 166411,
+          "stalled_queued_samples": 19779,
+          "t_s": 2.0
+        },
+        {
+          "rss_mb": 44.7,
+          "stalled_dropped_samples": 266677,
+          "stalled_queued_samples": 19779,
+          "t_s": 3.0
+        },
+        {
+          "rss_mb": 43.4,
+          "stalled_dropped_samples": 366815,
+          "stalled_queued_samples": 19779,
+          "t_s": 4.0
+        },
+        {
+          "rss_mb": 40.2,
+          "stalled_dropped_samples": 466843,
+          "stalled_queued_samples": 19779,
+          "t_s": 5.0
+        },
+        {
+          "rss_mb": 39.9,
+          "stalled_dropped_samples": 567001,
+          "stalled_queued_samples": 19779,
+          "t_s": 6.0
+        },
+        {
+          "rss_mb": 40.0,
+          "stalled_dropped_samples": 667016,
+          "stalled_queued_samples": 19779,
+          "t_s": 7.0
+        },
+        {
+          "rss_mb": 40.1,
+          "stalled_dropped_samples": 767218,
+          "stalled_queued_samples": 19779,
+          "t_s": 8.0
+        },
+        {
+          "rss_mb": 39.1,
+          "stalled_dropped_samples": 867208,
+          "stalled_queued_samples": 19779,
+          "t_s": 9.0
+        },
+        {
+          "rss_mb": 39.1,
+          "stalled_dropped_samples": 967488,
+          "stalled_queued_samples": 19779,
+          "t_s": 10.0
+        },
+        {
+          "rss_mb": 39.0,
+          "stalled_dropped_samples": 1067604,
+          "stalled_queued_samples": 19779,
+          "t_s": 11.0
+        },
+        {
+          "rss_mb": 39.8,
+          "stalled_dropped_samples": 1167609,
+          "stalled_queued_samples": 19779,
+          "t_s": 12.0
+        },
+        {
+          "rss_mb": 39.8,
+          "stalled_dropped_samples": 1267853,
+          "stalled_queued_samples": 19779,
+          "t_s": 13.0
+        },
+        {
+          "rss_mb": 39.8,
+          "stalled_dropped_samples": 1367849,
+          "stalled_queued_samples": 19779,
+          "t_s": 14.0
+        },
+        {
+          "rss_mb": 39.9,
+          "stalled_dropped_samples": 1468050,
+          "stalled_queued_samples": 19779,
+          "t_s": 15.0
+        },
+        {
+          "rss_mb": 40.3,
+          "stalled_dropped_samples": 1568229,
+          "stalled_queued_samples": 19779,
+          "t_s": 16.0
+        },
+        {
+          "rss_mb": 40.4,
+          "stalled_dropped_samples": 1668226,
+          "stalled_queued_samples": 19779,
+          "t_s": 17.0
+        },
+        {
+          "rss_mb": 39.8,
+          "stalled_dropped_samples": 1768400,
+          "stalled_queued_samples": 19779,
+          "t_s": 18.0
+        },
+        {
+          "rss_mb": 40.0,
+          "stalled_dropped_samples": 1868461,
+          "stalled_queued_samples": 19779,
+          "t_s": 19.0
+        },
+        {
+          "rss_mb": 40.4,
+          "stalled_dropped_samples": 1968659,
+          "stalled_queued_samples": 19779,
+          "t_s": 20.0
+        }
+      ]
+    }
+  },
+  "command_faults": {
+    "audit_counters": {
+      "arm_rejected": 82,
+      "armed": 1000,
+      "dedup_confirm": 415,
+      "executed": 1000,
+      "rearm_same_token": 198
+    },
+    "commands": 1000,
+    "dedup_replies": 415,
+    "device_executions_total": 1000,
+    "first_execution_replies": 1000,
+    "injected": {
+      "duplicate_confirms": 200,
+      "interlock_breaches": 82,
+      "lost_arm_replies": 198,
+      "lost_confirm_replies": 215,
+      "reconnects_between_arm_and_confirm": 155
+    },
+    "interlock_rejections": 82,
+    "keys_executed_exactly_once": 1000,
+    "keys_executed_more_than_once": 0,
+    "keys_never_executed": 0,
+    "seed": 7
+  },
+  "browser_render": {
+    "128ch_50hz": {
+      "device_pixel_ratio": 2,
+      "fps_avg": 120.05727503021804,
+      "frame_ms_max": 9.5,
+      "frame_ms_p50": 8.300000011920929,
+      "frame_ms_p95": 9.200000017881392,
+      "frame_ms_p99": 9.399999976158142,
+      "frames": 1199,
+      "frames_over_33ms": 0,
+      "lanes": 128,
+      "samples_per_s_received": 6399.560043995601,
+      "samples_received": 64002,
+      "seconds": 10,
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "viewport": "1440x900"
+    },
+    "64ch_100hz": {
+      "device_pixel_ratio": 2,
+      "fps_avg": 120.04441643393746,
+      "frame_ms_max": 11.800000011920927,
+      "frame_ms_p50": 8.300000011920929,
+      "frame_ms_p95": 9.299999982118608,
+      "frame_ms_p99": 9.400000005960464,
+      "frames": 1200,
+      "frames_over_33ms": 0,
+      "lanes": 64,
+      "samples_per_s_received": 6398.052623168213,
+      "samples_received": 64001,
+      "seconds": 10,
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "viewport": "1440x900"
+    }
+  }
+}

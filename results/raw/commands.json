@@ -1,0 +1,25 @@
+{
+  "audit_counters": {
+    "arm_rejected": 82,
+    "armed": 1000,
+    "dedup_confirm": 415,
+    "executed": 1000,
+    "rearm_same_token": 198
+  },
+  "commands": 1000,
+  "dedup_replies": 415,
+  "device_executions_total": 1000,
+  "first_execution_replies": 1000,
+  "injected": {
+    "duplicate_confirms": 200,
+    "interlock_breaches": 82,
+    "lost_arm_replies": 198,
+    "lost_confirm_replies": 215,
+    "reconnects_between_arm_and_confirm": 155
+  },
+  "interlock_rejections": 82,
+  "keys_executed_exactly_once": 1000,
+  "keys_executed_more_than_once": 0,
+  "keys_never_executed": 0,
+  "seed": 7
+}

@@ -1,0 +1,280 @@
+{
+  "alarm_level_entries": 0,
+  "busiest_channels": [
+    {
+      "id": "TIME_000001",
+      "updates": 79573
+    },
+    {
+      "id": "S0000003",
+      "updates": 2973
+    },
+    {
+      "id": "S0000004",
+      "updates": 2973
+    },
+    {
+      "id": "USLAB000025",
+      "updates": 2972
+    },
+    {
+      "id": "USLAB000026",
+      "updates": 2972
+    }
+  ],
+  "channels_subscribed": 90,
+  "channels_with_source_status_not_nominal": 90,
+  "channels_with_updates": 90,
+  "feed_connects": 5,
+  "feed_disconnects": 4,
+  "limit_transitions": 0,
+  "los_events": 23,
+  "los_events_by_cause": {
+    "heartbeat timeout": 21,
+    "source reports loss of signal": 2
+  },
+  "minutes_recorded": 77.9,
+  "non_numeric_values": 0,
+  "rows_with_source_status_not_nominal": 200,
+  "seconds_in_los": 1287.0,
+  "signal_transitions": [
+    {
+      "aos": true,
+      "reason": "heartbeat status nominal",
+      "t_offset_s": 1.0
+    },
+    {
+      "aos": false,
+      "reason": "heartbeat timeout",
+      "t_offset_s": 60.0
+    },
+    {
+      "aos": true,
+      "reason": "heartbeat status nominal",
+      "t_offset_s": 99.0
+    },
+    {
+      "aos": false,
+      "reason": "heartbeat timeout",
+      "t_offset_s": 167.0
+    },
+    {
+      "aos": true,
+      "reason": "heartbeat status nominal",
+      "t_offset_s": 169.0
+    },
+    {
+      "aos": false,
+      "reason": "heartbeat timeout",
+      "t_offset_s": 198.0
+    },
+    {
+      "aos": true,
+      "reason": "heartbeat status nominal",
+      "t_offset_s": 208.0
+    },
+    {
+      "aos": false,
+      "reason": "heartbeat timeout",
+      "t_offset_s": 218.0
+    },
+    {
+      "aos": true,
+      "reason": "heartbeat status nominal",
+      "t_offset_s": 228.0
+    },
+    {
+      "aos": false,
+      "reason": "heartbeat timeout",
+      "t_offset_s": 240.0
+    },
+    {
+      "aos": true,
+      "reason": "heartbeat status nominal",
+      "t_offset_s": 285.0
+    },
+    {
+      "aos": false,
+      "reason": "heartbeat timeout",
+      "t_offset_s": 318.0
+    },
+    {
+      "aos": true,
+      "reason": "heartbeat status nominal",
+      "t_offset_s": 392.0
+    },
+    {
+      "aos": false,
+      "reason": "heartbeat timeout",
+      "t_offset_s": 478.0
+    },
+    {
+      "aos": true,
+      "reason": "heartbeat status nominal",
+      "t_offset_s": 480.0
+    },
+    {
+      "aos": false,
+      "reason": "heartbeat timeout",
+      "t_offset_s": 496.0
+    },
+    {
+      "aos": true,
+      "reason": "heartbeat status nominal",
+      "t_offset_s": 497.0
+    },
+    {
+      "aos": false,
+      "reason": "heartbeat timeout",
+      "t_offset_s": 525.0
+    },
+    {
+      "aos": true,
+      "reason": "heartbeat status nominal",
+      "t_offset_s": 538.0
+    },
+    {
+      "aos": false,
+      "reason": "heartbeat timeout",
+      "t_offset_s": 583.0
+    },
+    {
+      "aos": true,
+      "reason": "heartbeat status nominal",
+      "t_offset_s": 589.0
+    },
+    {
+      "aos": false,
+      "reason": "heartbeat timeout",
+      "t_offset_s": 651.0
+    },
+    {
+      "aos": true,
+      "reason": "heartbeat status nominal",
+      "t_offset_s": 653.0
+    },
+    {
+      "aos": false,
+      "reason": "heartbeat timeout",
+      "t_offset_s": 732.0
+    },
+    {
+      "aos": true,
+      "reason": "heartbeat status nominal",
+      "t_offset_s": 738.0
+    },
+    {
+      "aos": false,
+      "reason": "source reports loss of signal",
+      "t_offset_s": 922.0
+    },
+    {
+      "aos": true,
+      "reason": "heartbeat status nominal",
+      "t_offset_s": 1331.0
+    },
+    {
+      "aos": false,
+      "reason": "heartbeat timeout",
+      "t_offset_s": 3119.0
+    },
+    {
+      "aos": true,
+      "reason": "heartbeat status nominal",
+      "t_offset_s": 3128.0
+    },
+    {
+      "aos": false,
+      "reason": "heartbeat timeout",
+      "t_offset_s": 3144.0
+    },
+    {
+      "aos": true,
+      "reason": "heartbeat status nominal",
+      "t_offset_s": 3146.0
+    },
+    {
+      "aos": false,
+      "reason": "heartbeat timeout",
+      "t_offset_s": 3165.0
+    },
+    {
+      "aos": true,
+      "reason": "heartbeat status nominal",
+      "t_offset_s": 3165.0
+    },
+    {
+      "aos": false,
+      "reason": "heartbeat timeout",
+      "t_offset_s": 3195.0
+    },
+    {
+      "aos": true,
+      "reason": "heartbeat status nominal",
+      "t_offset_s": 3196.0
+    },
+    {
+      "aos": false,
+      "reason": "heartbeat timeout",
+      "t_offset_s": 3218.0
+    },
+    {
+      "aos": true,
+      "reason": "heartbeat status nominal",
+      "t_offset_s": 3239.0
+    },
+    {
+      "aos": false,
+      "reason": "heartbeat timeout",
+      "t_offset_s": 3254.0
+    },
+    {
+      "aos": true,
+      "reason": "heartbeat status nominal",
+      "t_offset_s": 3258.0
+    },
+    {
+      "aos": false,
+      "reason": "heartbeat timeout",
+      "t_offset_s": 3269.0
+    },
+    {
+      "aos": true,
+      "reason": "heartbeat status nominal",
+      "t_offset_s": 3274.0
+    },
+    {
+      "aos": false,
+      "reason": "heartbeat timeout",
+      "t_offset_s": 3286.0
+    },
+    {
+      "aos": true,
+      "reason": "heartbeat status nominal",
+      "t_offset_s": 3335.0
+    },
+    {
+      "aos": false,
+      "reason": "heartbeat timeout",
+      "t_offset_s": 3350.0
+    },
+    {
+      "aos": true,
+      "reason": "heartbeat status nominal",
+      "t_offset_s": 3708.0
+    },
+    {
+      "aos": false,
+      "reason": "source reports loss of signal",
+      "t_offset_s": 3848.0
+    },
+    {
+      "aos": true,
+      "reason": "heartbeat status nominal",
+      "t_offset_s": 3860.0
+    }
+  ],
+  "start_unix_ms": 1794453792346,
+  "updates_per_second_avg": 33.65,
+  "updates_received": 157288
+}

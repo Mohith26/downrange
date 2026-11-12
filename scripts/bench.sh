@@ -11,7 +11,7 @@ BIN=gateway/target/release/downrange
 (cd console && npm run build)
 
 echo "== recorded ISS session"
-(cd gateway && ./target/release/downrange bench analyze --rec ../recordings/iss-session.rec --out ../$RAW/iss_session.json)
+(cd gateway && ./target/release/downrange bench analyze --rec ../recordings/iss-pass.rec --out ../$RAW/iss_session.json)
 
 echo "== fan-out throughput (synthetic load)"
 (cd gateway && ./target/release/downrange bench throughput --clients 4 --secs 8 \

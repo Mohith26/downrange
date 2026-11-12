@@ -87,7 +87,7 @@ export default function App() {
       cleanups.push(() => clearInterval(t))
       if (mode === 'replay') {
         store.setLink('connecting', 'loading recorded session')
-        fetch(`${import.meta.env.BASE_URL}iss-session.rec`)
+        fetch(`${import.meta.env.BASE_URL}iss-pass.rec`)
           .then((r) => {
             if (!r.ok) throw new Error(`HTTP ${r.status}`)
             return r.text()

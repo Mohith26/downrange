@@ -1,4 +1,4 @@
 node_modules
 dist
-public/iss-session.rec
+public/iss-pass.rec
 *.tsbuildinfo
