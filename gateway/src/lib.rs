@@ -1,4 +1,11 @@
+pub mod analyze;
+pub mod app;
+pub mod bench;
+pub mod command;
+pub mod hub;
 pub mod iss;
+pub mod limits;
 pub mod model;
 pub mod record;
+pub mod sources;
 pub mod tlcp;
