@@ -207,7 +207,7 @@ pub async fn throughput_point(nchan: usize, hz: f64, clients: usize, secs: f64) 
 }
 
 /// Fast clients plus one client that completes the handshake and then never reads.
-pub async fn slow_client(nchan: usize, hz: f64, fast: usize, secs: f64, queue_cap: usize) -> Value {
+pub async fn slow_client(nchan: usize, hz: f64, fast: usize, stalled_n: usize, secs: f64, queue_cap: usize) -> Value {
     let run = start_synth(nchan, hz, HubConfig { ring_samples: 200_000, client_queue_samples: queue_cap, client_control_msgs: 2000 }).await;
     let rss_start = rss_bytes();
     let mut wss = vec![];
@@ -215,7 +215,10 @@ pub async fn slow_client(nchan: usize, hz: f64, fast: usize, secs: f64, queue_ca
         wss.push(connect(run.port, None).await);
     }
     // The stalled client: socket stays open, nothing is ever read.
-    let stalled = connect(run.port, None).await;
+    let mut stalled = vec![];
+    for _ in 0..stalled_n {
+        stalled.push(connect(run.port, None).await);
+    }
     let start = tokio::time::Instant::now();
     let measure_from = start + Duration::from_secs(1);
     let until = measure_from + Duration::from_secs_f64(secs);
@@ -246,7 +249,11 @@ pub async fn slow_client(nchan: usize, hz: f64, fast: usize, secs: f64, queue_ca
     run.stop.store(true, Ordering::Relaxed);
     let stats = run.gw.stats_json();
     let clients = stats["clients"].as_array().cloned().unwrap_or_default();
-    let worst = clients.iter().max_by_key(|c| c["dropped_samples"].as_u64().unwrap_or(0)).cloned().unwrap_or(json!({}));
+    let worst = if stalled_n == 0 {
+        json!({"max_queued_samples": null, "dropped_samples": null, "coalesce_events": null})
+    } else {
+        clients.iter().max_by_key(|c| c["dropped_samples"].as_u64().unwrap_or(0)).cloned().unwrap_or(json!({}))
+    };
     let mut fast_lat: Vec<u32> = results.iter().flat_map(|r| r.lat_us.iter().copied()).collect();
     let offered = nchan as f64 * hz;
     let min_recv = results.iter().map(|r| r.samples).min().unwrap_or(0);
@@ -257,7 +264,7 @@ pub async fn slow_client(nchan: usize, hz: f64, fast: usize, secs: f64, queue_ca
         "channels": nchan,
         "hz_per_channel": hz,
         "fast_clients": fast,
-        "stalled_clients": 1,
+        "stalled_clients": stalled_n,
         "measure_s": secs,
         "client_queue_cap_samples": queue_cap,
         "stalled_client_max_queued_samples": worst["max_queued_samples"],

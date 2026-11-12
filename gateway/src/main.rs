@@ -128,7 +128,13 @@ async fn bench_cmd(args: &[String]) {
             }
             serde_json::json!({ "points": res })
         }
-        "slow" => bench::slow_client(num(args, "--channels", 1000), num(args, "--hz", 100.0), 3, secs, num(args, "--cap", 20_000)).await,
+        "slow" => {
+            let (c, h, cap) = (num(args, "--channels", 1000), num(args, "--hz", 100.0), num(args, "--cap", 20_000));
+            let baseline = bench::slow_client(c, h, 3, 0, secs, cap).await;
+            tokio::time::sleep(std::time::Duration::from_millis(500)).await;
+            let stalled = bench::slow_client(c, h, 3, 1, secs, cap).await;
+            serde_json::json!({ "baseline_no_stalled_client": baseline, "with_stalled_client": stalled })
+        }
         "commands" => bench::command_faults(num(args, "--n", 1000), num(args, "--seed", 7)).await,
         "analyze" => {
             let rec = record::load(&arg(args, "--rec").unwrap_or("../recordings/iss-session.rec".into())).expect("rec");
