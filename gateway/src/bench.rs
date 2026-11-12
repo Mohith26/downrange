@@ -353,6 +353,8 @@ pub async fn command_faults(n: usize, seed: u64) -> Value {
             }
         }
     };
+    // Make sure every channel has a fresh value before the first command.
+    wait_state(2).await;
     for i in 0..n {
         if std::env::var("DR_DEBUG").is_ok() {
             eprintln!("command {i}");
