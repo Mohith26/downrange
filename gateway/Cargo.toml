@@ -1,0 +1,27 @@
+[package]
+name = "downrange-gateway"
+version = "0.1.0"
+edition = "2021"
+description = "Telemetry ingest, limit checking, WebSocket fan-out and a guarded command path"
+license = "MIT"
+
+[lib]
+name = "downrange"
+path = "src/lib.rs"
+
+[[bin]]
+name = "downrange"
+path = "src/main.rs"
+
+[dependencies]
+tokio = { version = "1.48", features = ["rt-multi-thread", "net", "time", "sync", "macros", "io-util", "fs"] }
+tokio-tungstenite = { version = "0.24", default-features = false, features = ["handshake", "connect"] }
+futures-util = { version = "0.3", default-features = false, features = ["sink", "std"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rand = "0.8"
+
+[profile.release]
+opt-level = 3
+debug = false
+codegen-units = 4

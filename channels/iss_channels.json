@@ -1,0 +1,632 @@
+[
+ {
+  "id": "TIME_000001",
+  "desc": "Greenwich Mean Time (GMT)",
+  "category": "N/A",
+  "sheet_unit": "MS",
+  "group": "Signal"
+ },
+ {
+  "id": "USLAB000001",
+  "desc": "Control Moment Gyroscope (CMG)-1 On-Line",
+  "category": "ADCO",
+  "sheet_unit": "N/A",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000002",
+  "desc": "Control Moment Gyroscope (CMG)-2 On-Line",
+  "category": "ADCO",
+  "sheet_unit": "N/A",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000003",
+  "desc": "Control Moment Gyroscope (CMG)-3 On-Line",
+  "category": "ADCO",
+  "sheet_unit": "N/A",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000004",
+  "desc": "Control Moment Gyroscope (CMG)-4 On-Line",
+  "category": "ADCO",
+  "sheet_unit": "N/A",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000005",
+  "desc": "Number of Control Moment Gyroscope (CMG)s Online",
+  "category": "ADCO",
+  "sheet_unit": "ND",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000006",
+  "desc": "Control Moment Gyroscope (CMG) Control Torque - Roll (N-m)",
+  "category": "ADCO",
+  "sheet_unit": "FT-LB",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000007",
+  "desc": "Control Moment Gyroscope (CMG) Control Torque - Pitch (N-m)",
+  "category": "ADCO",
+  "sheet_unit": "FT-LB",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000008",
+  "desc": "Control Moment Gyroscope (CMG) Control Torque - Yaw (N-m)",
+  "category": "ADCO",
+  "sheet_unit": "FT-LB",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000009",
+  "desc": "Active Control Moment Gyroscope (CMG) Momentum (Nms)",
+  "category": "ADCO",
+  "sheet_unit": "FT-LB-S",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000010",
+  "desc": "Control Moment Gyroscope (CMG) Momentum Percentage (%)",
+  "category": "ADCO/VVO",
+  "sheet_unit": "PCT",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000012",
+  "desc": "US Guidance, Navigation and Control (GNC) Mode",
+  "category": "ADCO/VVO",
+  "sheet_unit": "N/A",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000018",
+  "desc": "US Current Local Vertical Local Horizontal (LVLH) Attitude Quaternion Component 0",
+  "category": "ADCO",
+  "sheet_unit": "ND",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000019",
+  "desc": "US Current Local Vertical Local Horizontal (LVLH) Attitude Quaternion Component 1",
+  "category": "ADCO",
+  "sheet_unit": "ND",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000020",
+  "desc": "US Current Local Vertical Local Horizontal (LVLH) Attitude Quaternion Component 2",
+  "category": "ADCO",
+  "sheet_unit": "ND",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000021",
+  "desc": "US Current Local Vertical Local Horizontal (LVLH) Attitude Quaternion Component 3",
+  "category": "ADCO",
+  "sheet_unit": "ND",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000022",
+  "desc": "US Attitude Roll Error (deg)",
+  "category": "ADCO",
+  "sheet_unit": "RAD",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000023",
+  "desc": "US Attitude Pitch Error (deg)",
+  "category": "ADCO",
+  "sheet_unit": "RAD",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000024",
+  "desc": "US Attitude Yaw Error (deg)",
+  "category": "ADCO",
+  "sheet_unit": "RAD",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000025",
+  "desc": "US Inertial Attitude Rate X (deg/s)",
+  "category": "ADCO",
+  "sheet_unit": "RAD/S",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000026",
+  "desc": "US Inertial Attitude Rate Y (deg/s)",
+  "category": "ADCO",
+  "sheet_unit": "RAD/S",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000027",
+  "desc": "US Inertial Attitude Rate Z (deg/s)",
+  "category": "ADCO",
+  "sheet_unit": "RAD/S",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000032",
+  "desc": "US Guidance, Navigation and Control (GNC) J2000 Propagated State Vector - X (km)",
+  "category": "ADCO/TOPO",
+  "sheet_unit": "FT",
+  "group": "Navigation"
+ },
+ {
+  "id": "USLAB000033",
+  "desc": "US Guidance, Navigation and Control (GNC) J2000 Propagated State Vector - Y (km)",
+  "category": "ADCO/TOPO",
+  "sheet_unit": "FT",
+  "group": "Navigation"
+ },
+ {
+  "id": "USLAB000034",
+  "desc": "US Guidance, Navigation and Control (GNC) J2000 Propagated State Vector - Z (km)",
+  "category": "ADCO/TOPO",
+  "sheet_unit": "FT",
+  "group": "Navigation"
+ },
+ {
+  "id": "USLAB000035",
+  "desc": "US Guidance, Navigation and Control (GNC) J2000 Propagated State Vector - X (m/s)",
+  "category": "ADCO/TOPO",
+  "sheet_unit": "FT/S",
+  "group": "Navigation"
+ },
+ {
+  "id": "USLAB000036",
+  "desc": "US Guidance, Navigation and Control (GNC) J2000 Propagated State Vector - Y (m/s)",
+  "category": "ADCO/TOPO",
+  "sheet_unit": "FT/S",
+  "group": "Navigation"
+ },
+ {
+  "id": "USLAB000037",
+  "desc": "US Guidance, Navigation and Control (GNC) J2000 Propagated State Vector - Z (m/s)",
+  "category": "ADCO/TOPO",
+  "sheet_unit": "FT/S",
+  "group": "Navigation"
+ },
+ {
+  "id": "USLAB000039",
+  "desc": "ISS Total Mass (kg)",
+  "category": "ADCO",
+  "sheet_unit": "KG",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000040",
+  "desc": "Solar Beta Angle (degrees)",
+  "category": "ADCO",
+  "sheet_unit": "DEG",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000045",
+  "desc": "Spin Motor Spin Bearing Temperature - Control Moment Gyroscope (CMG) 1 (deg C)",
+  "category": "ADCO",
+  "sheet_unit": "DEGF",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000046",
+  "desc": "Spin Motor Spin Bearing Temperature - Control Moment Gyroscope (CMG) 2 (deg C)",
+  "category": "ADCO",
+  "sheet_unit": "DEGF",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000047",
+  "desc": "Spin Motor Spin Bearing Temperature - Control Moment Gyroscope (CMG) 3 (deg C)",
+  "category": "ADCO",
+  "sheet_unit": "DEGF",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000048",
+  "desc": "Spin Motor Spin Bearing Temperature - Control Moment Gyroscope (CMG) 4 (deg C)",
+  "category": "ADCO",
+  "sheet_unit": "DEGF",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000081",
+  "desc": "Attitude Maneuver In Progress status",
+  "category": "VVO",
+  "sheet_unit": "N/A",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "Z1000001",
+  "desc": "Control Moment Gyroscope (CMG)-1 Vibration (g)",
+  "category": "ADCO",
+  "sheet_unit": "G",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "Z1000002",
+  "desc": "Control Moment Gyroscope (CMG)-2 Vibration (g)",
+  "category": "ADCO",
+  "sheet_unit": "G",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "Z1000003",
+  "desc": "Control Moment Gyroscope (CMG)-3 Vibration (g)",
+  "category": "ADCO",
+  "sheet_unit": "G",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "Z1000004",
+  "desc": "Control Moment Gyroscope (CMG)-4 Vibration (g)",
+  "category": "ADCO",
+  "sheet_unit": "G",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "Z1000005",
+  "desc": "Control Moment Gyroscope (CMG)-1 Spin Motor Current (amps)",
+  "category": "ADCO",
+  "sheet_unit": "AMP",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "Z1000006",
+  "desc": "Control Moment Gyroscope (CMG)-2 Spin Motor Current (amps)",
+  "category": "ADCO",
+  "sheet_unit": "AMP",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "Z1000007",
+  "desc": "Control Moment Gyroscope (CMG)-3 Spin Motor Current (amps)",
+  "category": "ADCO",
+  "sheet_unit": "AMP",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "Z1000008",
+  "desc": "Control Moment Gyroscope (CMG)-4 Spin Motor Current (amps)",
+  "category": "ADCO",
+  "sheet_unit": "AMP",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "Z1000009",
+  "desc": "Control Moment Gyroscope (CMG) 1 Wheel Speed (rpm)",
+  "category": "ADCO",
+  "sheet_unit": "RPM",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "Z1000010",
+  "desc": "Control Moment Gyroscope (CMG) 2 Wheel Speed (rpm)",
+  "category": "ADCO",
+  "sheet_unit": "RPM",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "Z1000011",
+  "desc": "Control Moment Gyroscope (CMG) 3 Wheel Speed (rpm)",
+  "category": "ADCO",
+  "sheet_unit": "RPM",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "Z1000012",
+  "desc": "Control Moment Gyroscope (CMG) 4 Wheel Speed (rpm)",
+  "category": "ADCO",
+  "sheet_unit": "RPM",
+  "group": "Attitude & CMGs"
+ },
+ {
+  "id": "USLAB000053",
+  "desc": "Lab ppO2",
+  "category": "ETHOS",
+  "sheet_unit": "PSIA",
+  "group": "Life support"
+ },
+ {
+  "id": "USLAB000054",
+  "desc": "Lab ppN2",
+  "category": "ETHOS",
+  "sheet_unit": "PSIA",
+  "group": "Life support"
+ },
+ {
+  "id": "USLAB000055",
+  "desc": "Lab ppCO2",
+  "category": "ETHOS",
+  "sheet_unit": "PSIA",
+  "group": "Life support"
+ },
+ {
+  "id": "USLAB000058",
+  "desc": "Cabin pressure",
+  "category": "ETHOS",
+  "sheet_unit": "PSI",
+  "group": "Life support"
+ },
+ {
+  "id": "USLAB000059",
+  "desc": "Cabin temperature",
+  "category": "ETHOS",
+  "sheet_unit": "CNT",
+  "group": "Life support"
+ },
+ {
+  "id": "NODE3000001",
+  "desc": "Node 3 ppO2",
+  "category": "ETHOS",
+  "sheet_unit": "PSIA",
+  "group": "Life support"
+ },
+ {
+  "id": "NODE3000002",
+  "desc": "Node 3 ppN2",
+  "category": "ETHOS",
+  "sheet_unit": "PSIA",
+  "group": "Life support"
+ },
+ {
+  "id": "NODE3000003",
+  "desc": "Node 3 ppCO2",
+  "category": "ETHOS",
+  "sheet_unit": "PSIA",
+  "group": "Life support"
+ },
+ {
+  "id": "NODE3000005",
+  "desc": "Urine Tank Qty",
+  "category": "ETHOS",
+  "sheet_unit": "PCT",
+  "group": "Life support"
+ },
+ {
+  "id": "NODE3000008",
+  "desc": "Waste Water Tank Qty",
+  "category": "ETHOS",
+  "sheet_unit": "PCT",
+  "group": "Life support"
+ },
+ {
+  "id": "NODE3000009",
+  "desc": "Clean Water Tank Qty",
+  "category": "ETHOS",
+  "sheet_unit": "PCT",
+  "group": "Life support"
+ },
+ {
+  "id": "NODE3000011",
+  "desc": "O2 Production rate",
+  "category": "ETHOS",
+  "sheet_unit": "LBM/D",
+  "group": "Life support"
+ },
+ {
+  "id": "S0000001",
+  "desc": "Starboard Thermal Radiator Rotating Joint (TRRJ) Position (degrees)",
+  "category": "SPARTAN/VVO",
+  "sheet_unit": "DEG",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "S0000002",
+  "desc": "Port Thermal Radiator Rotating Joint (TRRJ) Position (degrees)",
+  "category": "SPARTAN/VVO",
+  "sheet_unit": "DEG",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "S0000003",
+  "desc": "Solar Alpha Rotary Joint (SARJ) Starboard Joint Angle Position (degrees)",
+  "category": "SPARTAN/VVO",
+  "sheet_unit": "DEG",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "S0000004",
+  "desc": "Solar Alpha Rotary Joint (SARJ) Port Joint Angle Position (degrees)",
+  "category": "SPARTAN/VVO",
+  "sheet_unit": "DEG",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "P4000001",
+  "desc": "Photovolatic Control Unit (PVCU) - Solar Array - 2A - Drive Voltage",
+  "category": "SPARTAN",
+  "sheet_unit": "CNT",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "P4000002",
+  "desc": "Photovolatic Control Unit (PVCU) - Solar Array - 2A - Drive Current",
+  "category": "SPARTAN",
+  "sheet_unit": "CNT",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "P4000007",
+  "desc": "Photovolatic Control Unit (PVCU) - Solar Array - 2A - Beta Gimble Assembly (BGA) Position (degrees)",
+  "category": "SPARTAN",
+  "sheet_unit": "DEG",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "P4000008",
+  "desc": "Photovolatic Control Unit (PVCU) - Solar Array - 4A - Beta Gimble Assembly (BGA) Position (degrees)",
+  "category": "SPARTAN",
+  "sheet_unit": "DEG",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "P6000001",
+  "desc": "Photovolatic Control Unit (PVCU) - Solar Array - 4B - Drive Voltage",
+  "category": "SPARTAN",
+  "sheet_unit": "CNT",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "P6000002",
+  "desc": "Photovolatic Control Unit (PVCU) - Solar Array - 4B - Drive Current",
+  "category": "SPARTAN",
+  "sheet_unit": "CNT",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "P6000007",
+  "desc": "Photovolatic Control Unit (PVCU) - Solar Array - 4B - Beta Gimble Assembly (BGA) Position (degrees)",
+  "category": "SPARTAN",
+  "sheet_unit": "DEG",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "P6000008",
+  "desc": "Photovolatic Control Unit (PVCU) - Solar Array - 2B - Beta Gimble Assembly (BGA) Position (degrees)",
+  "category": "SPARTAN",
+  "sheet_unit": "DEG",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "S4000001",
+  "desc": "Photovolatic Control Unit (PVCU) - Solar Array - 1A - Drive Voltage",
+  "category": "SPARTAN",
+  "sheet_unit": "CNT",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "S4000002",
+  "desc": "Photovolatic Control Unit (PVCU) - Solar Array - 1A - Drive Current",
+  "category": "SPARTAN",
+  "sheet_unit": "CNT",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "S4000007",
+  "desc": "Photovolatic Control Unit (PVCU) - Solar Array - 1A - Beta Gimble Assembly (BGA) Position (degrees)",
+  "category": "SPARTAN",
+  "sheet_unit": "DEG",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "S4000008",
+  "desc": "Photovolatic Control Unit (PVCU) - Solar Array - 3A - Beta Gimble Assembly (BGA) Position (degrees)",
+  "category": "SPARTAN",
+  "sheet_unit": "DEG",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "S6000001",
+  "desc": "Photovolatic Control Unit (PVCU) - Solar Array - 3B - Drive Voltage",
+  "category": "SPARTAN",
+  "sheet_unit": "CNT",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "S6000002",
+  "desc": "Photovolatic Control Unit (PVCU) - Solar Array - 3B - Drive Current",
+  "category": "SPARTAN",
+  "sheet_unit": "CNT",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "S6000007",
+  "desc": "Photovolatic Control Unit (PVCU) - Solar Array - 3B - Beta Gimble Assembly (BGA) Position (degrees)",
+  "category": "SPARTAN",
+  "sheet_unit": "DEG",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "S6000008",
+  "desc": "Photovolatic Control Unit (PVCU) - Solar Array - 1B - Beta Gimble Assembly (BGA) Position (degrees)",
+  "category": "SPARTAN",
+  "sheet_unit": "DEG",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "S1000001",
+  "desc": "Loop A Pump Flowrate (kg/hr)",
+  "category": "SPARTAN",
+  "sheet_unit": "CNT",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "S1000002",
+  "desc": "Loop A PM Out Press (kPa)",
+  "category": "SPARTAN",
+  "sheet_unit": "CNT",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "S1000003",
+  "desc": "Loop A PM Out Temp (deg C)",
+  "category": "SPARTAN",
+  "sheet_unit": "CNT",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "P1000001",
+  "desc": "Loop B Pump Flowrate (kg/hr)",
+  "category": "SPARTAN",
+  "sheet_unit": "CNT",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "P1000002",
+  "desc": "Loop B PM Out Press (kPa)",
+  "category": "SPARTAN",
+  "sheet_unit": "CNT",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "P1000003",
+  "desc": "Loop B PM Out Temp (deg C)",
+  "category": "SPARTAN",
+  "sheet_unit": "CNT",
+  "group": "Power & thermal"
+ },
+ {
+  "id": "Z1000014",
+  "desc": "Ku-Band SGANT Elevation Position",
+  "category": "CATO",
+  "sheet_unit": "DEG",
+  "group": "Comms"
+ },
+ {
+  "id": "S1000004",
+  "desc": "S-Band Radio Frequency Group (RFG 1) Azimuth Gimbal Position",
+  "category": "CATO",
+  "sheet_unit": "DEG",
+  "group": "Comms"
+ },
+ {
+  "id": "S1000005",
+  "desc": "S-Band Radio Frequency Group (RFG 1) Elevation Gimbal Position",
+  "category": "CATO/VVO",
+  "sheet_unit": "DEG",
+  "group": "Comms"
+ },
+ {
+  "id": "P1000004",
+  "desc": "S-Band Radio Frequency Group (RFG 2) Azimuth Gimbal Position",
+  "category": "CATO",
+  "sheet_unit": "DEG",
+  "group": "Comms"
+ },
+ {
+  "id": "P1000005",
+  "desc": "S-Band Radio Frequency Group (RFG 2) Elevation Gimbal Position",
+  "category": "CATO",
+  "sheet_unit": "DEG",
+  "group": "Comms"
+ }
+]
